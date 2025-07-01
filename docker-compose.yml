@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  mymongo:
+    image: mongo
+    container_name: mymongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+
+  collector:
+    build: ./checker
+    container_name: collector
+    restart: always
+    depends_on:
+      - mymongo
+
+  flaskapp:
+    build: ./plot
+    container_name: flaskapp
+    restart: always
+    depends_on:
+      - mymongo
+    ports:
+      - "5000:5000"
