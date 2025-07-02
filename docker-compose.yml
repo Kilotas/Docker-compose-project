@@ -11,6 +11,19 @@ services:
     ports:
       - "27017:27017"
 
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    depends_on:
+      - mymongo
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_SERVER: mymongo
+    ports:
+      - "8081:8081"
+
   collector:
     build: ./checker
     container_name: collector

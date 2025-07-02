@@ -15,20 +15,21 @@ This project uses Docker Compose to manage three connected services: mymongo (Mo
 - Docker Compose
 
 ## Project Structure
-
+```
 .
 ├── docker-compose.yml
 ├── checker/
 │   └── (Dockerfile and code for collector)
 └── plot/
     └── (Dockerfile and code for flaskapp)
+```
 
 ## Quick Start
 
 1. Clone the repository or download the files:
 
-   git clone <your-repo-url>
-   cd <your-project-folder>
+   git clone https://github.com/Kilotas/Docker-compose-project.git
+   cd train_compose
 
 2. Build and start all services:
 
@@ -80,7 +81,7 @@ This will:
 Feel free to use and modify this project.
 
 ## Author
-
 Omarov Alen
+https://github.com/Kilotas
 
 
